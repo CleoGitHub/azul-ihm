@@ -1,7 +1,7 @@
 <template>
     <div class="plateau-joueur embed-responsive embed-responsive-4by3">
-        <div class="embed-responsive-item" @ajoutPlancher="ajoutPlancher(4)">
-            <div class="mozaiques d-flex" @ajoutPlancher="ajoutPlancher(4)">
+        <div class="embed-responsive-item" @ajoutplancher="ajoutPlancher()">
+            <div class="mozaiques d-flex" @ajoutplancher="ajoutPlancher()">
                 <MozaiquesGauche :lignes="plateauJoueur.linesNb" :couleurs="plateauJoueur.linesColor" ></MozaiquesGauche>
                 <MozaiquesDroite :mur="plateauJoueur.wall"></MozaiquesDroite>
             </div>
@@ -31,9 +31,8 @@
             plateauJoueur:{}
         },
         methods: {
-            ajoutPlancher(valeur) {
+            ajoutPlancher() {
                 console.log("ajoutPlancher")
-                console.log(valeur)
             }
         }
 
