@@ -31,9 +31,9 @@
                 if(selection.selectionner && (couleur === selection.donnees.couleur || couleur === 0) && this.ligneOver === ligne) {
                     retour = nombre + selection.donnees.nbSelection;
                     if(retour > ligne + 1) {
-                        // let plancher = retour - (ligne+1)
+                        let plancher = retour - (ligne+1)
                         retour = ligne + 1;
-                        this.$emit("ajoutplancher")
+                        this.$emit("ajoutplancher",plancher)
                     }
                 } else {
                     retour = nombre;
