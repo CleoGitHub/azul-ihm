@@ -36,7 +36,7 @@
 
 <style scoped>
     .plateau-joueur {
-        border: solid 1px black;
+        /*border: solid 1px black;*/
         background: center / contain no-repeat url("/img/plateau-joueur.png");
         position: relative;
     }
@@ -47,12 +47,12 @@
         right: 6%;
         left: 6%;
         bottom: 31%;
-        border: 3px solid red;
+        /*border: 3px solid red;*/
     }
 
     .plancher {
         position: absolute;
-        border: 3px solid purple;
+        /*border: 3px solid purple;*/
         bottom: 9%;
         right: 31%;
         left: 4%;

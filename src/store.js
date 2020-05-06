@@ -6,11 +6,14 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        selectionner:{
+        selection:{
+            selectionner:false,
+            donnees: {
 
+            }
         },
         board: {
-            PB:{}
+            // PB:{}
         },
         charge: false,
         enCours: true
