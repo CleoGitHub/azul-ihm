@@ -20,3 +20,8 @@ body {
     margin:0;
     padding: 0;
 }
+
+.loading {
+    background: center no-repeat url("/img/fond.png"), radial-gradient(white,#5ac5d4) !important;
+    max-height: 100vh;
+}
