@@ -1,5 +1,5 @@
 <template>
-    <div class="embed-responsive embed-responsive-1by1 mozaique" v-bind:style="styleObject" @mouseover="mouseOver()">
+    <div class="embed-responsive embed-responsive-1by1 mozaique" v-bind:style="styleObject">
         <div class="embed-responsive-item "></div>
     </div>
 </template>
@@ -54,9 +54,6 @@
             }
         },
         methods: {
-            mouseOver () {
-                this.$emit('mouseOverMozaique');
-            }
         }
     }
 </script>

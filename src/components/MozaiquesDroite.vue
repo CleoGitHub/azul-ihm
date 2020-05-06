@@ -29,7 +29,7 @@
 <style scoped>
     .mozaiques-droite {
         position: relative;
-        border: 3px solid yellow;
+        /*border: 3px solid yellow;*/
         width: 48%;
         left:5%;
         height:100%;

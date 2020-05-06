@@ -1,15 +1,28 @@
 <template>
     <div id="board" class="col-5 m-0 p-0 row d-flex flex-wrap">
-        <Fabrique v-for="(fabrique,index) in fabriques" :mozaiques="fabrique" :key="index"></Fabrique>
+        <div v-if="this.$store.state.selection.selectionner" class="overlay d-flex flex-column justify-content-center">
+            <div class="container">
+                <button type="button" class="close" aria-label="Close" @click="annullerSelection()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="container d-flex">
+                <p class="col-6 text-center">{{nbMozaique}} X </p>
+                <Mozaique :couleur="couleurMozaique"></Mozaique>
+            </div>
+        </div>
+        <Fabrique v-for="(fabrique,index) in fabriques" :mozaiques="fabrique" :key="index" :id="index"></Fabrique>
     </div>
 </template>
 
 <script>
     import Fabrique from "./Fabrique";
+    import Mozaique from "./Mozaique"
     export default {
         name: "Board",
         components: {
-            Fabrique
+            Fabrique,
+            Mozaique
         },
         data() {
             return {
@@ -17,6 +30,25 @@
         },
         props: {
             fabriques:{}
+        },
+        computed:{
+            nbMozaique () {
+                return this.$store.state.selection.donnees.nbSelection;
+            },
+            couleurMozaique () {
+                return this.$store.state.selection.donnees.couleur;
+            }
+        },
+        methods: {
+            annullerSelection() {
+                let selection = {
+                    selectionner : false,
+                    donnees: {
+
+                    }
+                }
+                this.$store.state.selection = selection
+            }
         }
     }
 </script>
