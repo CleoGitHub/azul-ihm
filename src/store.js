@@ -12,9 +12,7 @@ export default new Vuex.Store({
 
             }
         },
-        board: {
-            // PB:{}
-        },
+        board: null,
         charge: false,
     },
     mutations: {

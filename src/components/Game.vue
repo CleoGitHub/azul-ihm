@@ -1,7 +1,8 @@
 <template>
-    <div class="row m-0 p-0">
-      <Menu :players="players"></Menu>
-      <Board :fabriques="fabriques"></Board>
+    <div class="row m-0 p-0 h-100">
+        <div v-if="!hasLoaded" class="loading"></div>
+        <Menu :players="players"></Menu>
+        <Board :fabriques="fabriques"></Board>
     </div>
 </template>
 <script>
@@ -17,11 +18,14 @@
         },
 
         computed: {
+            hasLoaded(){
+                return this.$store.state.board != null;
+            },
             players() {
-            return this.$store.state.board.PB
+                return this.hasLoaded ? this.$store.state.board.PB : null;
             },
             fabriques() {
-            return this.$store.state.board.factories
+                return this.hasLoaded ? this.$store.state.board.factories : null;
             }
         },
 
