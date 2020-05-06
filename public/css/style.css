@@ -21,6 +21,14 @@ body {
     padding: 0;
 }
 
+.loading {
+    background: center no-repeat url("/img/fond.png"), radial-gradient(white,#5ac5d4) !important;
+    height:100%;
+    width:100%;
+    position: absolute;
+    z-index: 99;
+}
+
 .overlay {
     position: absolute;
     top:0;
