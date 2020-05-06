@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="row m-0 p-0">
     <Menu :players="players"></Menu>
-    <Board></Board>
+    <Board :fabriques="fabriques"></Board>
   </div>
 </template>
 
@@ -19,17 +19,21 @@ export default {
   computed: {
     players() {
       return this.$store.state.board.PB
+    },
+    fabriques() {
+      return this.$store.state.board.factories
     }
   },
   mounted() {
-
   },
   components: {
     Menu,
     Board
   },
   created() {
-    this.$store.dispatch('getBoard')
+    setInterval(() => {
+      this.$store.dispatch('getBoard')
+    },1000)
   }
 }
 </script>

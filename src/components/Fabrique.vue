@@ -1,8 +1,12 @@
 <template>
-    <div class="fabrique flex-grow-1">
-        <div class="container-fabrique-mozaiques d-flex flex-column justify-content-around">
-            <div class="d-flex flex-row justify-content-around fabrique-ligne">
-                <Mozaique v-for="(mozaique, index) in mozaiques" :scale="1" :key="index" :couleur="mozaique.couleur" @mouseOverMozaique="mouseOver(mozaique.couleur)" class="col-6"></Mozaique>
+    <div class="col-3 m-0 p-0">
+        <div class="embed-responsive embed-responsive-1by1">
+            <div class="container-fabrique-mozaiques fabrique embed-responsive-item d-flex">
+                <div class="row m-auto p-0 col-8">
+                    <div class="col-6 m-0 p-0 p-md-1" v-for="(mozaique, index) in mozaiques" :key="index">
+                        <Mozaique  :scale="1" :couleur="mozaique" @mouseOverMozaique="mouseOver(mozaique.couleur)"></Mozaique>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -20,9 +24,7 @@
             }
         },
         props:{
-            mozaiques: {
-
-            }
+            mozaiques: {}
         },
         methods: {
             mouseOver (el) {
@@ -39,22 +41,9 @@
 <style scoped>
     .fabrique {
         background: center / contain no-repeat url("/img/fabrique.png");
-        height: auto;
-        max-height: 33%;
-        width: auto;
-        position: relative;
     }
 
     .container-fabrique-mozaiques {
-        border: 3px solid blue;
-        position: absolute;
-        top: 15%;
-        bottom: 15%;
-        right: 15%;
-        left: 15%;
-    }
-
-    .fabrique-ligne {
-        height: 40%;
+        border: 3px solid green !important;
     }
 </style>

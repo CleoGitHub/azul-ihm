@@ -1,5 +1,6 @@
 <template>
-    <div class="mozaique embed-responsive embed-responsive-1by1" v-bind:style="styleObject" @mouseover="mouseOver()">
+    <div class="embed-responsive embed-responsive-1by1 mozaique" v-bind:style="styleObject" @mouseover="mouseOver()">
+        <div class="embed-responsive-item "></div>
     </div>
 </template>
 
@@ -30,19 +31,19 @@
                         couleur = "none"
                         break;
                     case 1:
-                        couleur = "rouge"
+                        couleur = "bleu"
                         break;
                     case 2:
-                        couleur = "rouge"
+                        couleur = "jaune"
                         break;
                     case 3:
                         couleur = "rouge"
                         break;
                     case 4:
-                        couleur = "rouge"
+                        couleur = "noir"
                         break;
                     case 5:
-                        couleur = "rouge"
+                        couleur = "sion"
                         break;
                 }
                 let back = this.libre ? "none" : 'center / contain no-repeat url(img/mozaique-' + couleur + '.png)'
@@ -62,7 +63,7 @@
 
 <style scoped>
     .mozaique {
-        border: 3px blue solid;
+        border: 3px blue solid !important;
     }
 
     .ligne > .mozaique {

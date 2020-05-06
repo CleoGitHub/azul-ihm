@@ -1,6 +1,6 @@
 <template>
     <div id="board" class="col-5 m-0 p-0 row d-flex flex-wrap">
-        <Fabrique v-for="(fabrique,index) in fabriques" :mozaiques="fabrique.mozaiques" :key="index"></Fabrique>
+        <Fabrique v-for="(fabrique,index) in fabriques" :mozaiques="fabrique" :key="index"></Fabrique>
     </div>
 </template>
 
@@ -13,10 +13,10 @@
         },
         data() {
             return {
-                fabriques: this.$store.state.fabriques
             }
         },
         props: {
+            fabriques:{}
         }
     }
 </script>

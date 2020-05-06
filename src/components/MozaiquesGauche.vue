@@ -1,6 +1,6 @@
 <template>
     <div class="mozaiques-gauche">
-        <div class="ligne" @mouseover="mouseOver()" v-for="(ligne, index) in lignes" :key="index">
+        <div class="ligne flex-row-reverse" @mouseover="mouseOver()" v-for="(ligne, index) in lignes" :key="index">
             <Mozaique v-for="mozaique in ligne" :key="mozaique" :couleur="couleurs[ligne]"></Mozaique>
         </div>
     </div>

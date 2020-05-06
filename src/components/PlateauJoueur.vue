@@ -1,11 +1,13 @@
 <template>
     <div class="plateau-joueur embed-responsive embed-responsive-4by3">
-        <div class="mozaiques d-flex">
-            <MozaiquesGauche :lignes="plateauJoueur.linesNb" :couleurs="plateauJoueur.linesColor"></MozaiquesGauche>
-            <MozaiquesDroite :mur="plateauJoueur.wall"></MozaiquesDroite>
-        </div>
-        <div class="plancher d-flex flex-row">
-            <Mozaique v-for="(mozaiqueFloor, index) in plateauJoueur.floor" :key="index" :couleur="mozaiqueFloor"></Mozaique>
+        <div class="embed-responsive-item">
+            <div class="mozaiques d-flex">
+                <MozaiquesGauche :lignes="plateauJoueur.linesNb" :couleurs="plateauJoueur.linesColor"></MozaiquesGauche>
+                <MozaiquesDroite :mur="plateauJoueur.wall"></MozaiquesDroite>
+            </div>
+            <div class="plancher d-flex">
+                <Mozaique v-for="(mozaiqueFloor, index) in plateauJoueur.floor" :key="index" :couleur="mozaiqueFloor"></Mozaique>
+            </div>
         </div>
     </div>
 </template>
@@ -13,7 +15,7 @@
 <script>
     import MozaiquesGauche from "./MozaiquesGauche";
     import MozaiquesDroite from "./MozaiquesDroite";
-    import Mozaique from "./Mozaique"
+    import Mozaique from "./Mozaique";
     export default {
         name: "PlateauJoueur",
         components: {
@@ -23,8 +25,6 @@
         },
         data() {
             return {
-                plancher:[
-                ]
             }
         },
         props: {

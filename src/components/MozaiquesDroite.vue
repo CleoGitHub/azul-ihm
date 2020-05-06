@@ -20,7 +20,7 @@
         },
         methods: {
             mozaiqueCouleur(y,x) {
-                return this.mur[y][x] ? (x+y)%5+1 : 0;
+                return this.mur[y][x] ? (((x)-y)+5)%5+1 : 0;
             }
         }
     }

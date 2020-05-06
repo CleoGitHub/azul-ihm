@@ -10,12 +10,20 @@ export default new Vuex.Store({
 
         },
         board: {
-
-        }
+            PB:{}
+        },
+        charge: false,
+        enCours: true
     },
     mutations: {
         setBoard(state, data) {
-            this.state.board = data.GlobalBoard
+            if(data.GlobalBoard != undefined) {
+                this.state.board = data.GlobalBoard;
+                this.state.enCours = true;
+            } else {
+                this.state.enCours = false;
+            }
+            this.state.charge = true;
         }
     },
     actions: {
