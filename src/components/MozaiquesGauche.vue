@@ -34,6 +34,7 @@
                         let plancher = retour - (ligne+1)
                         retour = ligne + 1;
                         console.log(plancher)
+                        this.$emit("ajourPlancher")
                         //ajouter au plancher
                     }
                 } else {

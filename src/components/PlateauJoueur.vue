@@ -1,8 +1,8 @@
 <template>
     <div class="plateau-joueur embed-responsive embed-responsive-4by3">
-        <div class="embed-responsive-item">
-            <div class="mozaiques d-flex">
-                <MozaiquesGauche :lignes="plateauJoueur.linesNb" :couleurs="plateauJoueur.linesColor"></MozaiquesGauche>
+        <div class="embed-responsive-item" @ajoutPlancher="ajoutPlancher(4)">
+            <div class="mozaiques d-flex" @ajoutPlancher="ajoutPlancher(4)">
+                <MozaiquesGauche :lignes="plateauJoueur.linesNb" :couleurs="plateauJoueur.linesColor" ></MozaiquesGauche>
                 <MozaiquesDroite :mur="plateauJoueur.wall"></MozaiquesDroite>
             </div>
             <div class="plancher d-flex">
@@ -29,6 +29,12 @@
         },
         props: {
             plateauJoueur:{}
+        },
+        methods: {
+            ajoutPlancher(valeur) {
+                console.log("ajoutPlancher")
+                console.log(valeur)
+            }
         }
 
     }
