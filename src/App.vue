@@ -1,6 +1,6 @@
 <template>
-  <div id="app" class="row m-0 p-0 d-flex">
-    <Menu></Menu>
+  <div id="app" class="row m-0 p-0">
+    <Menu :players="players"></Menu>
     <Board></Board>
   </div>
 </template>
@@ -12,9 +12,24 @@ import Board from '@/components/Board.vue'
 
 export default {
   name: 'App',
+  data() {
+    return {
+    }
+  },
+  computed: {
+    players() {
+      return this.$store.state.board.PB
+    }
+  },
+  mounted() {
+
+  },
   components: {
     Menu,
     Board
+  },
+  created() {
+    this.$store.dispatch('getBoard')
   }
 }
 </script>

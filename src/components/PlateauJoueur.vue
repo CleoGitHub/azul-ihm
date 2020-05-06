@@ -1,0 +1,61 @@
+<template>
+    <div class="plateau-joueur embed-responsive embed-responsive-4by3">
+        <div class="mozaiques d-flex">
+            <MozaiquesGauche :lignes="plateauJoueur.linesNb" :couleurs="plateauJoueur.linesColor"></MozaiquesGauche>
+            <MozaiquesDroite :mur="plateauJoueur.wall"></MozaiquesDroite>
+        </div>
+        <div class="plancher d-flex flex-row">
+            <Mozaique v-for="(mozaiqueFloor, index) in plateauJoueur.floor" :key="index" :couleur="mozaiqueFloor"></Mozaique>
+        </div>
+    </div>
+</template>
+
+<script>
+    import MozaiquesGauche from "./MozaiquesGauche";
+    import MozaiquesDroite from "./MozaiquesDroite";
+    import Mozaique from "./Mozaique"
+    export default {
+        name: "PlateauJoueur",
+        components: {
+            MozaiquesGauche,
+            MozaiquesDroite,
+            Mozaique
+        },
+        data() {
+            return {
+                plancher:[
+                ]
+            }
+        },
+        props: {
+            plateauJoueur:{}
+        }
+
+    }
+</script>
+
+<style scoped>
+    .plateau-joueur {
+        border: solid 1px black;
+        background: center / contain no-repeat url("/img/plateau-joueur.png");
+        position: relative;
+    }
+
+    .mozaiques {
+        position: absolute;
+        top: 13%;
+        right: 6%;
+        left: 6%;
+        bottom: 31%;
+        border: 3px solid red;
+    }
+
+    .plancher {
+        position: absolute;
+        border: 3px solid purple;
+        bottom: 9%;
+        right: 31%;
+        left: 4%;
+        top: 75%;
+    }
+</style>
