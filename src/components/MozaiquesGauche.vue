@@ -33,9 +33,7 @@
                     if(retour > ligne + 1) {
                         let plancher = retour - (ligne+1)
                         retour = ligne + 1;
-                        console.log(plancher)
-                        this.$emit("ajourPlancher")
-                        //ajouter au plancher
+                        this.$emit("ajoutplancher",plancher)
                     }
                 } else {
                     retour = nombre;
@@ -48,6 +46,9 @@
                 } else {
                     return 0
                 }
+            },
+            testAjoutPlancher() {
+                console.log("teste")
             }
         },
         props: {

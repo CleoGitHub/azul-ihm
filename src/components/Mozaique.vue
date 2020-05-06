@@ -46,7 +46,7 @@
                         couleur = "sion"
                         break;
                 }
-                let back = this.libre ? "none" : 'center / contain no-repeat url(img/mozaique-' + couleur + '.png)'
+                let back = this.libre ? "none" : (couleur !=  "none" ? 'center / contain no-repeat url(img/mozaique-' + couleur + '.png)' : 'none')
                 return {
                     background : back,
                     transform : 'scale(' + this.scale + ')'

@@ -1,8 +1,8 @@
 <template>
-    <div class="plateau-joueur embed-responsive embed-responsive-4by3">
-        <div class="embed-responsive-item" @ajoutPlancher="ajoutPlancher(4)">
-            <div class="mozaiques d-flex" @ajoutPlancher="ajoutPlancher(4)">
-                <MozaiquesGauche :lignes="plateauJoueur.linesNb" :couleurs="plateauJoueur.linesColor" ></MozaiquesGauche>
+    <div class="plateau-joueur embed-responsive embed-responsive-4by3" :class="{ 'not-current-player' : !isCurrent }">
+        <div class="embed-responsive-item">
+            <div class="mozaiques d-flex">
+                <MozaiquesGauche :lignes="plateauJoueur.linesNb" :couleurs="plateauJoueur.linesColor" @ajoutplancher="ajoutPlancher"></MozaiquesGauche>
                 <MozaiquesDroite :mur="plateauJoueur.wall"></MozaiquesDroite>
             </div>
             <div class="plancher d-flex">
@@ -28,12 +28,17 @@
             }
         },
         props: {
-            plateauJoueur:{}
+            plateauJoueur:{},
+            id : Number
         },
         methods: {
             ajoutPlancher(valeur) {
-                console.log("ajoutPlancher")
                 console.log(valeur)
+            }
+        },
+        computed: {
+            isCurrent() {
+                return this.$store.state.board.currentPlayer === this.id
             }
         }
 
@@ -63,5 +68,11 @@
         right: 31%;
         left: 4%;
         top: 75%;
+    }
+
+    .not-current-player {
+        background: linear-gradient(black, black),center / contain no-repeat url("/img/plateau-joueur.png");
+        background-size: cover;
+        background-blend-mode: saturation;
     }
 </style>
